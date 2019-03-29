@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+      android:visibility="gone"
+        android:layout_width="match_parent"
+        android:id="@+id/layNoRecord"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:alpha="0.5"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="100dp"
+            android:src="@drawable/logo"
+            android:layout_height="100dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Sorry unable to load weather details!"/>
+    </LinearLayout>
+
+
+    <ScrollView
+
+        android:id="@+id/layParent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/pune_city_image"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="49dp" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/txtCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="PUNE"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints" />
+
+
+
+                <TextView
+                    android:id="@+id/txtTemperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="0.0"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/txtCity"
+                    tools:ignore="MissingConstraints" />
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/txtFeelsLike"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginRight="20dp"
+                android:gravity="right"
+                android:text="Feels Like:"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtVisibility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginRight="20dp"
+                android:gravity="right"
+                android:text="Visibility:"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtPrecip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginRight="20dp"
+                android:gravity="right"
+                android:text="Precip:"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/txtUvIndex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginRight="20dp"
+                android:gravity="right"
+                android:text="UV Index"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/txtGust"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginRight="20dp"
+                android:gravity="right"
+                android:text="Gust:"
+                android:textSize="14sp" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:id="@+id/txtWind"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="11"
+                    android:textColor="#777"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toStartOf="@+id/divider_1"
+                    app:layout_constraintTop_toTopOf="@+id/txtWindDegree" />
+
+                <TextView
+                    android:id="@+id/lblWind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WIND"
+                    android:textColor="#777"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txtWind"
+                    app:layout_constraintStart_toStartOf="@+id/txtWind"
+                    app:layout_constraintTop_toBottomOf="@+id/txtWind" />
+
+                <View
+                    android:id="@+id/divider_1"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/colorPrimaryDark"
+                    app:layout_constraintBottom_toBottomOf="@+id/lblWindDegree"
+                    app:layout_constraintEnd_toStartOf="@+id/txtWindDegree"
+                    app:layout_constraintTop_toTopOf="@+id/txtWindDegree" />
+
+                <TextView
+                    android:id="@+id/txtWindDegree"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="11"
+                    android:textColor="#777"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lblWindDegree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="WIND DEGREE"
+                    android:textColor="#777"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txtWindDegree"
+                    app:layout_constraintStart_toStartOf="@+id/txtWindDegree"
+                    app:layout_constraintTop_toBottomOf="@+id/txtWindDegree" />
+
+                <View
+                    android:id="@+id/divider_2"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@color/colorPrimaryDark"
+                    app:layout_constraintBottom_toBottomOf="@+id/lblWindDegree"
+                    app:layout_constraintStart_toEndOf="@+id/txtWindDegree"
+                    app:layout_constraintTop_toTopOf="@+id/txtWindDegree" />
+
+                <TextView
+                    android:id="@+id/txtWindDir"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="11"
+                    android:textColor="#777"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toEndOf="@+id/divider_2"
+                    app:layout_constraintTop_toTopOf="@+id/txtWindDegree" />
+
+                <TextView
+                    android:id="@+id/stat_detail_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="  WIND DIRECTION"
+                    android:textColor="#777"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txtWindDir"
+                    app:layout_constraintStart_toStartOf="@+id/txtWindDir"
+                    app:layout_constraintTop_toBottomOf="@+id/txtWindDir" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+            //
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:id="@+id/txtPressure"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="33"
+                    android:textColor="#777"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toStartOf="@+id/divider_11"
+                    app:layout_constraintTop_toTopOf="@+id/txtHumidity" />
+
+                <TextView
+                    android:id="@+id/lblPressure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pressure"
+                    android:textColor="#777"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txtPressure"
+                    app:layout_constraintStart_toStartOf="@+id/txtPressure"
+                    app:layout_constraintTop_toBottomOf="@+id/txtPressure" />
+
+                <View
+                    android:id="@+id/divider_11"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/colorPrimaryDark"
+                    app:layout_constraintBottom_toBottomOf="@+id/lblCloud"
+                    app:layout_constraintEnd_toStartOf="@+id/txtHumidity"
+                    app:layout_constraintTop_toTopOf="@+id/txtHumidity" />
+
+                <TextView
+                    android:id="@+id/txtHumidity"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="33"
+                    android:textColor="#777"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lblHumidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="HUMIDITY"
+                    android:textColor="#777"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txtHumidity"
+                    app:layout_constraintStart_toStartOf="@+id/txtHumidity"
+                    app:layout_constraintTop_toBottomOf="@+id/txtHumidity" />
+
+
+                <View
+                    android:id="@+id/divider_22"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@color/colorPrimaryDark"
+                    app:layout_constraintBottom_toBottomOf="@+id/lblHumidity"
+                    app:layout_constraintStart_toEndOf="@+id/txtHumidity"
+                    app:layout_constraintTop_toTopOf="@+id/txtHumidity" />
+
+
+                <TextView
+                    android:id="@+id/txtCloud"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="33"
+                    android:textColor="#777"
+                    android:textSize="22sp"
+                    app:layout_constraintStart_toEndOf="@+id/divider_22"
+                    app:layout_constraintTop_toTopOf="@+id/txtHumidity" />
+
+                <TextView
+                    android:id="@+id/lblCloud"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="CLOUD"
+                    android:textColor="#777"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txtCloud"
+                    app:layout_constraintStart_toStartOf="@+id/txtCloud"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCloud" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/lblWind"
+                app:layout_constraintStart_toStartOf="@+id/lblWind"
+                app:layout_constraintTop_toBottomOf="@+id/lblWind">
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
